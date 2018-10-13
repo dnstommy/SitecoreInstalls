@@ -1,0 +1,35 @@
+1.  run PreInstall.ps1
+
+    Run:
+        Register-PSRepository -Name SitecoreGallery -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2
+        Install-Module SitecoreInstallFramework 
+        Install-Module SitecoreFundamentals 
+
+2   Get SQL and run https://drive.google.com/open?id=15dFwra3onXRy_9Kj3SUQHf1lRY79_9PC
+
+    install SQL 2016 Sp2
+    https://www.microsoft.com/en-us/download/details.aspx?id=56836
+    !!!NOTE THE SERVER NAME IN THE PARAMATERS.1.PS1 FILE!!!
+
+    Open SQL and create a login named dev and password EhA%49Y!jd(w#iF, set security to sysadmin
+
+3.  Run DSC (in SC9 folder)
+    Start-DscConfiguration -Wait -Verbose -Path .\Sitecore
+
+4.  Get WPI from http://go.microsoft.com/fwlink/?LinkId=209096
+    Install URL Rewrite
+    Install Web Deploy 3.6 for Hosting Servers
+
+5.  Get license from https://drive.google.com/open?id=1deQUhMUsF_aZ8caGfeXviU0E7ApULsye
+    Copy license file to C:\resourcefiles
+
+6.  Get Sitecore Files from https://drive.google.com/open?id=12FUp-U3hjgQUOrN9KxjDPrtYPrMrXLvf
+    Put those files in C:resourcefiles
+
+4.  Install SOLR via https://gist.github.com/jermdavis/8d8a79f680505f1074153f02f70b9105
+    !!!NOTE THE JRE VERSION!!!
+
+5.  Run install.ps1
+
+
+
