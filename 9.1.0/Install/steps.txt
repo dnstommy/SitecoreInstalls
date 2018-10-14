@@ -1,0 +1,33 @@
+Install choco and apps
+	0. Choco (optional).ps1
+
+Enable windows features. May require reboot
+	1. Enable-Windows-Features.ps1
+
+Install SOLR 7.2.1
+	2. Install-Solr.ps1
+
+Install SIF (currently requires having it as a SIF)
+	3. Install SIF Module.ps1
+
+Install SQL 2017
+	https://www.microsoft.com/en-us/sql-server/sql-server-editions-express
+
+Install SQL 2017 SSMS
+	https://go.microsoft.com/fwlink/?linkid=2014306
+
+Enable SQL mixed mode
+Create a SQL user
+
+Move to Configs path in PS, run this
+	Install-SitecoreConfiguration -Path .\prerequisites.json
+
+Create folder called C:\Temp\XP0
+Copy all JSON files from Configs folder to the XP0 folder
+Copy Sitecore 9.1.0 rev. 001442 (OnPrem)_single.scwdp.zip to XP0 folder
+Copy Sitecore 9.1.0 rev. 001442 (OnPrem)_xp0xconnect.scwdp.zip to XP0 folder
+Copy Sitecore.IdentityServer 2.0.0 rev. 00151 (OnPrem)_identityserver.scwdp.zip to XP0 folder
+Copy license file to XP0 folder
+
+Move back to Install path in PS, run this
+	4. install-SC-workstation.ps1
