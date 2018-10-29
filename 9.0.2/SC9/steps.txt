@@ -20,8 +20,7 @@
     Install URL Rewrite
     Install Web Deploy 3.6 for Hosting Servers
 
-5.  Get license from https://drive.google.com/open?id=1deQUhMUsF_aZ8caGfeXviU0E7ApULsye
-    Copy license file to C:\resourcefiles
+5.  Copy License file in.
 
 6.  Get Sitecore Files from https://drive.google.com/open?id=12FUp-U3hjgQUOrN9KxjDPrtYPrMrXLvf
     Put those files in C:resourcefiles
