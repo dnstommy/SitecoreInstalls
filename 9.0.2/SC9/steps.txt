@@ -22,7 +22,7 @@
 
 5.  Copy License file in.
 
-6.  Get Sitecore Files from https://drive.google.com/open?id=12FUp-U3hjgQUOrN9KxjDPrtYPrMrXLvf
+6.  Get Sitecore Files from Sitecore
     Put those files in C:resourcefiles
 
 4.  Install SOLR via https://gist.github.com/jermdavis/8d8a79f680505f1074153f02f70b9105
