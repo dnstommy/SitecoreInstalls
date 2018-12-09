@@ -12,6 +12,7 @@ $SqlAdminUser = "dev"
 $SqlAdminPassword = "dev123"
 $IdentityServerSiteName = "$prefix.identityserver"
 $ClientSecret="Random_STRING"
+$SitecoreAdminPassword = "b"
 
 
 
@@ -76,6 +77,7 @@ $sitecoreParams = @{
  XConnectCert = $certParams.CertificateName
  Sitename = $sitecoreSiteName
  XConnectCollectionService = "https://$XConnectCollectionService" 
+ SitecoreAdminPassword = $SitecoreAdminPassword
 }
 
 
