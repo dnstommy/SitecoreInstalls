@@ -22,12 +22,18 @@ Create a SQL user
 Move to Configs path in PS, run this
 	Install-SitecoreConfiguration -Path .\prerequisites.json
 
-Create folder called C:\Temp\XP0
-Copy all JSON files from Configs folder to the XP0 folder
-Copy Sitecore 9.1.0 rev. 001442 (OnPrem)_single.scwdp.zip to XP0 folder
-Copy Sitecore 9.1.0 rev. 001442 (OnPrem)_xp0xconnect.scwdp.zip to XP0 folder
-Copy Sitecore.IdentityServer 2.0.0 rev. 00151 (OnPrem)_identityserver.scwdp.zip to XP0 folder
-Copy license file to XP0 folder
+Create folder called C:\ResourceFiles
+Copy all JSON files from Configs\XP0_Configuratio_ files folder to the C:\ResourceFiles folder
+Copy "Sitecore 9.1.0 rev. 001564 (OnPrem)_single.scwdp.zip" to C:\ResourceFiles folder
+Copy "Sitecore 9.1.0 rev. 001564 (OnPrem)_xp0xconnect.scwdp.zip" to C:\ResourceFiles folder
+Copy "Sitecore.IdentityServer 2.0.0 rev. 00157 (OnPrem)_identityserver.scwdp.zip" to C:\ResourceFiles folder
+Copy license file to C:\ResourceFiles folder
 
-Move back to Install path in PS, run this
-	4. install-SC-workstation.ps1
+
+To install a workstation version of SC
+	Move back to Install path in PS, run this
+		4-install-SC-workstation.ps1
+
+To install with individual tasks
+	Move back to Install path in PS, run this
+		4-Install-Individual-tasks-install.ps1

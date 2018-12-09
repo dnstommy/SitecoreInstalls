@@ -25,6 +25,11 @@
             "DefaultValue": "SC910",
             "Description": "The prefix for uniquely identifying instances."
         },
+        "SitecoreAdminPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The admin password for the Sitecore instance."
+        },
         "SqlAdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
@@ -39,6 +44,76 @@
             "Type": "String",
             "DefaultValue": "Localhost",
             "Description": "The Sql Server where databases will be installed."
+        },
+        "SqlCollectionPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql admin password to use when installing databases."
+        },
+        "SqlProcessingPoolsPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Processing Pools connection string in Sitecore."
+        },
+        "SqlReferenceDataPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Reference Data connection string in Sitecore."
+        },
+        "SqlMarketingAutomationPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Marketing Automation connection string in Sitecore."
+        },
+        "SqlMessagingPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Messaging connection string in Sitecore."
+        },
+        "SqlProcessingEnginePassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Processing Engine Tasks and Storage database connection strings in Sitecore."
+        },
+        "SqlReportingPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Reporting connection string in Sitecore."
+        },
+        "SqlCorePassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Core connection string in Sitecore."
+        },
+        "SqlSecurityPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Security connection string in Sitecore."
+        },
+        "SqlMasterPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Master connection string in Sitecore."
+        },
+        "SqlWebPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Web connection string in Sitecore."
+        },
+        "SqlProcessingTasksPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Processing Tasks connection string in Sitecore."
+        },
+        "SqlFormsPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Experience Forms connection string in Sitecore."
+        },
+        "SqlExmMasterPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the EXM Master connection string in Sitecore."
         },
         "SolrUrl": {
             "Type": "String",
@@ -100,15 +175,45 @@
             "Description": "Pipe-separated list of instances (URIs) that are allowed to login via Sitecore Identity.",
             "DefaultValue": ""
         },
-        "ClientSecret": {
-            "Type": "string",
-            "Description": "Client secret of PasswordClient section. It's a random string between 1 and 100 symbols long.",
-            "DefaultValue": "IdentityServerClientSecret"
-        },
         "SitecoreIdentityAuthority": {
             "Type": "string",
             "DefaultValue": "https://SitecoreIdentityServerHost",
             "Description": "IdentityServer provider URI."
+        },
+        "ClientSecret": {
+            "Type": "string",
+            "Description": "Client secret of PasswordClient section. It's a random string between 1 and 100 symbols long.",
+            "DefaultValue": "SIF-Default"
+        },
+        "MachineLearningServerUrl": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "The Microsoft Machine Learning Server instance to use."
+        },
+        "MachineLearningServerBlobEndpointCertificatePath": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "The Machine Learning Server Blob Storage WebApi Endpoint Certificate Path."
+        },
+        "MachineLearningServerBlobEndpointCertificatePassword": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "The Machine Learning Server Blob Storage WebApi Endpoint Certificate Password."
+        },
+        "MachineLearningServerTableEndpointCertificatePath": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "The Machine Learning Server Table Storage WebApi Endpoint Certificate Path."
+        },
+        "MachineLearningServerTableEndpointCertificatePassword": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "The Machine Learning Server Table Storage WebApi Endpoint Certificate Password."
+        },
+        "MachineLearningServerEndpointCertificationAuthorityCertificatePath": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "The path to certificate of certification authority that issued certificates for Machine Learning Server Blob and Table storage endpoints."
         },
         "XConnectXP0:Package": {
             "Type": "String",
@@ -139,6 +244,11 @@
             "Type": "String",
             "Reference": "PasswordRecoveryUrl",
             "Description": "Override to pass PasswordRecoveryUrl value to IdentityServer config."
+        },
+        "SitecoreXP0:SitecoreIdentityAuthority": {
+            "Type": "String",
+            "Reference": "SitecoreIdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority value to SitecoreXP0 config."
         },
         "SitecoreXP0:XConnectCollectionService": {
             "Type": "String",
@@ -310,21 +420,125 @@
             "Reference": "AllowedCorsOrigins",
             "Description": "Override to pass AllowedCorsOrigins value to IdentityServer config."
         },
-        "IdentityServer:ClientSecret": {
+        "XConnectXP0:MachineLearningServerUrl": {
             "Type": "String",
-            "Reference": "ClientSecret",
-            "Description": "Override to pass ClientSecret value to IdentityServer config."
+            "Reference": "MachineLearningServerUrl",
+            "Description": "Override to pass MachineLearningServerUrl value to XConnectXP0 config."
         },
-        "SitecoreXP0:SitecoreIdentitySecret": {
+        "XConnectXP0:MachineLearningServerBlobEndpointCertificatePath": {
             "Type": "String",
-            "Reference": "ClientSecret",
-            "Description": "Override to pass ClientSecret value to IdentityServer config."
+            "Reference": "MachineLearningServerBlobEndpointCertificatePath",
+            "Description": "Override to pass MachineLearningServerBlobEndpointCertificatePath value to XConnectXP0 config."
         },
-        "SitecoreXP0:SitecoreIdentityAuthority": {
+        "XConnectXP0:MachineLearningServerBlobEndpointCertificatePassword": {
             "Type": "String",
-            "Reference": "SitecoreIdentityAuthority",
-            "Description": "Override to pass SitecoreIdentityAuthority value to Sitecore config."
+            "Reference": "MachineLearningServerBlobEndpointCertificatePassword",
+            "Description": "Override to pass MachineLearningServerBlobEndpointCertificatePassword value to XConnectXP0 config."
+        },
+        "XConnectXP0:MachineLearningServerTableEndpointCertificatePath": {
+            "Type": "String",
+            "Reference": "MachineLearningServerTableEndpointCertificatePath",
+            "Description": "Override to pass MachineLearningServerTableEndpointCertificatePath value to XConnectXP0 config."
+        },
+        "XConnectXP0:MachineLearningServerTableEndpointCertificatePassword": {
+            "Type": "String",
+            "Reference": "MachineLearningServerTableEndpointCertificatePassword",
+            "Description": "Override to pass MachineLearningServerTableEndpointCertificatePassword value to XConnectXP0 config."
+        },
+        "XConnectXP0:MachineLearningServerEndpointCertificationAuthorityCertificatePath": {
+            "Type": "String",
+            "Reference": "MachineLearningServerEndpointCertificationAuthorityCertificatePath",
+            "Description": "Override to pass MachineLearningServerEndpointCertificationAuthorityCertificatePath value to XConnectXP0 config."
         }
+    },
+    "Variables": {
+        "SqlProcessingPools.Password": "[if(variable('Test.SqlProcessingPools.Password'),variable('Generate.SqlProcessingPools.Password'),parameter('SqlProcessingPoolsPassword'))]",
+        "XConnectXP0:SqlProcessingPools.Password": "[variable('SqlProcessingPools.Password')]",
+        "SitecoreXP0:SqlProcessingPools.Password": "[variable('SqlProcessingPools.Password')]",
+        "Test.SqlProcessingPools.Password": "[equal(parameter('SqlProcessingPoolsPassword'),'SIF-Default')]",
+        "Generate.SqlProcessingPools.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlCollection.Password": "[if(variable('Test.SqlCollection.Password'),variable('Generate.SqlCollection.Password'),parameter('SqlCollectionPassword'))]",
+        "XConnectXP0:SqlCollection.Password": "[variable('SqlCollection.Password')]",
+        "Test.SqlCollection.Password": "[equal(parameter('SqlCollectionPassword'),'SIF-Default')]",
+        "Generate.SqlCollection.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlReferenceData.Password": "[if(variable('Test.SqlReferenceData.Password'),variable('Generate.SqlReferenceData.Password'),parameter('SqlReferenceDataPassword'))]",
+        "XConnectXP0:SqlReferenceData.Password": "[variable('SqlReferenceData.Password')]",
+        "SitecoreXP0:SqlReferenceData.Password": "[variable('SqlReferenceData.Password')]",
+        "Test.SqlReferenceData.Password": "[equal(parameter('SqlReferenceDataPassword'),'SIF-Default')]",
+        "Generate.SqlReferenceData.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlMarketingAutomation.Password": "[if(variable('Test.SqlMarketingAutomation.Password'),variable('Generate.SqlMarketingAutomation.Password'),parameter('SqlMarketingAutomationPassword'))]",
+        "XConnectXP0:SqlMarketingAutomation.Password": "[variable('SqlMarketingAutomation.Password')]",
+        "SitecoreXP0:SqlMarketingAutomation.Password": "[variable('SqlMarketingAutomation.Password')]",
+        "Test.SqlMarketingAutomation.Password": "[equal(parameter('SqlMarketingAutomationPassword'),'SIF-Default')]",
+        "Generate.SqlMarketingAutomation.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlMessaging.Password": "[if(variable('Test.SqlMessaging.Password'),variable('Generate.SqlMessaging.Password'),parameter('SqlMessagingPassword'))]",
+        "XConnectXP0:SqlMessaging.Password": "[variable('SqlMessaging.Password')]",
+        "SitecoreXP0:SqlMessaging.Password": "[variable('SqlMessaging.Password')]",
+        "Test.SqlMessaging.Password": "[equal(parameter('SqlMessagingPassword'),'SIF-Default')]",
+        "Generate.SqlMessaging.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlProcessingEngine.Password": "[if(variable('Test.SqlProcessingEngine.Password'),variable('Generate.SqlProcessingEngine.Password'),parameter('SqlProcessingEnginePassword'))]",
+        "XConnectXP0:SqlProcessingEngine.Password": "[variable('SqlProcessingEngine.Password')]",
+        "Test.SqlProcessingEngine.Password": "[equal(parameter('SqlProcessingEnginePassword'),'SIF-Default')]",
+        "Generate.SqlProcessingEngine.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlReporting.Password": "[if(variable('Test.SqlReporting.Password'),variable('Generate.SqlReporting.Password'),parameter('SqlReportingPassword'))]",
+        "XConnectXP0:SqlReporting.Password": "[variable('SqlReporting.Password')]",
+        "SitecoreXP0:SqlReporting.Password": "[variable('SqlReporting.Password')]",
+        "Test.SqlReporting.Password": "[equal(parameter('SqlReportingPassword'),'SIF-Default')]",
+        "Generate.SqlReporting.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlCore.Password": "[if(variable('Test.SqlCore.Password'),variable('Generate.SqlCore.Password'),parameter('SqlCorePassword'))]",
+        "SitecoreXP0:SqlCore.Password": "[variable('SqlCore.Password')]",
+        "IdentityServer:SqlCore.Password": "[variable('SqlCore.Password')]",
+        "Test.SqlCore.Password": "[equal(parameter('SqlCorePassword'),'SIF-Default')]",
+        "Generate.SqlCore.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlSecurity.Password": "[if(variable('Test.SqlSecurity.Password'),variable('Generate.SqlSecurity.Password'),parameter('SqlSecurityPassword'))]",
+        "SitecoreXP0:SqlSecurity.Password": "[variable('SqlSecurity.Password')]",
+        "Test.SqlSecurity.Password": "[equal(parameter('SqlSecurityPassword'),'SIF-Default')]",
+        "Generate.SqlSecurity.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlMaster.Password": "[if(variable('Test.SqlMaster.Password'),variable('Generate.SqlMaster.Password'),parameter('SqlMasterPassword'))]",
+        "SitecoreXP0:SqlMaster.Password": "[variable('SqlMaster.Password')]",
+        "Test.SqlMaster.Password": "[equal(parameter('SqlMasterPassword'),'SIF-Default')]",
+        "Generate.SqlMaster.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlWeb.Password": "[if(variable('Test.SqlWeb.Password'),variable('Generate.SqlWeb.Password'),parameter('SqlWebPassword'))]",
+        "SitecoreXP0:SqlWeb.Password": "[variable('SqlWeb.Password')]",
+        "Test.SqlWeb.Password": "[equal(parameter('SqlWebPassword'),'SIF-Default')]",
+        "Generate.SqlWeb.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlProcessingTasks.Password": "[if(variable('Test.SqlProcessingTasks.Password'),variable('Generate.SqlProcessingTasks.Password'),parameter('SqlProcessingTasksPassword'))]",
+        "SitecoreXP0:SqlProcessingTasks.Password": "[variable('SqlProcessingTasks.Password')]",
+        "Test.SqlProcessingTasks.Password": "[equal(parameter('SqlProcessingTasksPassword'),'SIF-Default')]",
+        "Generate.SqlProcessingTasks.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlForms.Password": "[if(variable('Test.SqlForms.Password'),variable('Generate.SqlForms.Password'),parameter('SqlFormsPassword'))]",
+        "SitecoreXP0:SqlForms.Password": "[variable('SqlForms.Password')]",
+        "Test.SqlForms.Password": "[equal(parameter('SqlFormsPassword'),'SIF-Default')]",
+        "Generate.SqlForms.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SqlExmMaster.Password": "[if(variable('Test.SqlExmMaster.Password'),variable('Generate.SqlExmMaster.Password'),parameter('SqlExmMasterPassword'))]",
+        "SitecoreXP0:SqlExmMaster.Password": "[variable('SqlExmMaster.Password')]",
+        "Test.SqlExmMaster.Password": "[equal(parameter('SqlExmMasterPassword'),'SIF-Default')]",
+        "Generate.SqlExmMaster.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "Sitecore.Admin.Password": "[if(variable('Test.Admin.Password'),variable('Generate.Admin.Password'),parameter('SitecoreAdminPassword'))]",
+        "SitecoreXP0:Sitecore.Admin.Password": "[variable('Sitecore.Admin.Password')]",
+        "Test.Admin.Password": "[equal(parameter('SitecoreAdminPassword'),'SIF-Default')]",
+        "Generate.Admin.Password": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "Client.Secret" : "[if(variable('Test.Client.Secret'),variable('Generate.Client.Secret'),parameter('ClientSecret'))]",
+        "IdentityServer:Client.Secret": "[variable('Client.Secret')]",
+        "SitecoreXP0:Sitecore.IdentitySecret": "[variable('Client.Secret')]",
+        "Test.Client.Secret": "[equal(parameter('ClientSecret'),'SIF-Default')]",
+        "Generate.Client.Secret": "[randomstring(Length:100,DisAllowSpecial:True)]"
+
     },
     "Includes": {
         "IdentityServerCertificates":{
@@ -347,6 +561,37 @@
         },
         "SitecoreXP0": {
             "Source": ".\\Sitecore-XP0.json"
+        }
+    },
+    "Register": {
+        "Tasks": {
+            "OutNull": "Out-Null"
+        }
+    },
+    "Tasks": {
+        "GeneratePasswords": {
+            "Description": "Generates all shared passwords and secrets.",
+            "Type": "OutNull",
+            "Params": {
+                "InputObject":  [
+                    "[variable('SqlProcessingPools.Password')]",
+                    "[variable('SqlCollection.Password')]",
+                    "[variable('SqlReferenceData.Password')]",
+                    "[variable('SqlMarketingAutomation.Password')]",
+                    "[variable('SqlMessaging.Password')]",
+                    "[variable('SqlProcessingEngine.Password')]",
+                    "[variable('SqlReporting.Password')]",
+                    "[variable('SqlCore.Password')]",
+                    "[variable('SqlSecurity.Password')]",
+                    "[variable('SqlMaster.Password')]",
+                    "[variable('SqlWeb.Password')]",
+                    "[variable('SqlProcessingTasks.Password')]",
+                    "[variable('SqlForms.Password')]",
+                    "[variable('SqlExmMaster.Password')]",
+                    "[variable('Sitecore.Admin.Password')]",
+                    "[variable('Client.Secret')]"
+                ]
+            }
         }
     }
 }

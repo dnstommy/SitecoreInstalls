@@ -1,2 +1,0 @@
-Register-PSRepository -Name SitecoreGallery_Internal -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2## when available
-##Install-Module SitecoreInstallFramework -AllowPreRelease## from diskImport-Module C:\SitecoreInstallFramework.2.0.0-beta0260\SitecoreInstallFramework.2.0.0-beta0260\SitecoreInstallFramework.psd1

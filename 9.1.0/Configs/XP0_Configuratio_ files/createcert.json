@@ -33,7 +33,7 @@
     },
     "Register": {
         "Tasks": {
-            "WriteOutput": "Write-Output"
+            "WriteInformation": "Write-Information"
         },
         "ConfigFunction": {
             "ConvertToSecureString": "ConvertTo-SecureString"
@@ -51,9 +51,10 @@
         },
         "DisplayPassword": {
             "Description": "Print password if the user hasn't supplied their own.",
-            "Type": "WriteOutput",
+            "Type": "WriteInformation",
             "Params": {
-                "InputObject": "[concat('Certificate Password: ',variable('Password.String'))]"
+                "Messagedata": "[concat('Certificate Password: ',variable('Password.String'))]",
+                "InformationAction": "Continue"
             },
             "Skip": "[not(variable('User.Supplied.Password'))]"
         },
