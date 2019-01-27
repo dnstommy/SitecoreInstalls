@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>sitecore-installs</id>
+    <version>1.0.0</version>
+    <title>Sitecore-Installs</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NuSpec file</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <authors>dnstommy</authors>
+  </metadata>
+  <files>
+    <file src="**\*" target="" />
+  </files>
+</package>
