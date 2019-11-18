@@ -9,7 +9,7 @@ function Check-WindowsFeature {
         ECHO "Feature " $FeatureName " is already installed."
     } else {
         ECHO "Installing " $FeatureName
-        Enable-WindowsOptionalFeature -FeatureName $FeatureName –Online -All
+        Enable-WindowsOptionalFeature -FeatureName $FeatureName -Online -All
     }
   }
 
